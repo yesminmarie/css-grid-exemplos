@@ -1,0 +1,54 @@
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+html, body {
+    box-sizing: border-box;
+    background-color: #ffeead;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+}
+
+.container {
+    border: 1px solid black;
+    height: 100%;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    /*
+    justify-content: end; -> posiciona os itens à direita
+    justify-content: start; -> (default) posiciona os itens à esquerda 
+    justify-content: center; -> (default) posiciona os itens ao centro (horizontalmente)
+    justify-content: space-between; -> os itens são posicionados com espaços entre eles, sem espaços no início e no fim
+    justify-content: space-evenly; -> os itens são posicionados com espaços iguais entre eles, inserindo espaços também no ínicio e no fim
+    justify-content: space-around; -> distribui os itens uniformemente, os itens tem um espaço de meio tamanho em cada extremidade
+    */
+    justify-content: space-around;
+    /*
+    align-content: end; -> posiciona os itens embaixo
+    align-content: center; -> posiciona os itens ao centro (verticalmente)
+    */
+    align-content: center; 
+}
+
+.container > div:nth-child(1n){
+    background-color: #96ceb4;
+}
+
+.container > div:nth-child(3n){
+    background-color: #88d8b0;
+}
+
+.container > div:nth-child(2n){
+    background-color: #ff6f69;
+}
+
+.container > div:nth-child(4n){
+    background-color: #ffcc5c;
+}

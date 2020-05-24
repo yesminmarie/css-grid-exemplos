@@ -12,46 +12,37 @@
     object-fit: cover;
 } 
 
-html, body {
-    background-color: #ffeead;
-    margin: 10px;
-}
-
 .container {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-rows: 75px; /* todas as linhas terão 100px de altura */
+    grid-auto-rows: 75px; /* todas as linhas terão 75px de altura */
+    /**
+     grid-auto-flow:
+
+     grid-auto-flow: row -> (default) mostra uma linha por vez, seguindo a ordem das imagens, deixando buracos
+     grid-auto-flow: dense -> preenche os buracos
+     */
+    grid-auto-flow: dense;
 }
 
-.header {
-    grid-area: h;
+.horizontal {
+    grid-column: span 2; /* expande o conteúdo em duas colunas*/
+    /* ou 
+    grid-column: auto / span 2;
+    */
 }
 
-.menu {
-    grid-area: m;
+.vertical {
+    grid-row: span 2; /* expande o conteúdo em duas linhas*/
 }
 
-.content {
-    grid-area: c;
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
-.footer {
-    grid-area: f;
-}
-
-.container > div:nth-child(1n){
-    background-color: #96ceb4;
-}
-
-.container > div:nth-child(3n){
-    background-color: #88d8b0;
-}
-
-.container > div:nth-child(2n){
-    background-color: #ff6f69;
-}
-
-.container > div:nth-child(4n){
-    background-color: #ffcc5c;
+html, body {
+    background-color: #ffeead;
+    margin: 10px;
 }

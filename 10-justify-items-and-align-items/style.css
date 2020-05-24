@@ -1,0 +1,72 @@
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color: #ffeead;
+}
+
+html, body {
+    box-sizing: border-box;
+    background-color: #ffeead;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    /*
+    justify-items: stretch; -> (default) estica os itens
+    justify-items: center; -> comprime os itens ao centro (horizontalmente)
+    justify-items: start; -> comprime os itens à esquerda
+    justify-items: end; -> comprime os itens à direita
+    */
+    /* justify-items: end; */
+
+    /*
+    align-items: center; -> comprime os itens ao centro (verticalmente)
+    align-items: end; -> comprimeos itens embaixo
+    align-items: start; -> comprime os itens em cima
+    */
+    /* align-items: center; */
+}
+
+.header {
+    grid-column: 1 / -1;
+}
+
+.menu {
+    grid-column: 1 / 3;
+}
+
+.content {
+    grid-column: 3 / -1;
+    justify-self: center; /* apenas este conteúdo ficará comprimido ao centro */
+    align-self: end; /* apenas este conteúdo ficará comprimido embaixo */
+}
+
+.footer {
+    grid-column: 1 / -1;
+}
+
+
+.container > div:nth-child(1n){
+    background-color: #96ceb4;
+}
+
+.container > div:nth-child(3n){
+    background-color: #88d8b0;
+}
+
+.container > div:nth-child(2n){
+    background-color: #ff6f69;
+}
+
+.container > div:nth-child(4n){
+    background-color: #ffcc5c;
+}
